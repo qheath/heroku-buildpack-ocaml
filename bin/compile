@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-url=http://heroku-buildpack-ocaml.s3.amazonaws.com/ocaml-3.12.1.tgz
+url=http://codefirst.org/mzp/ocaml-4.00.1.tar.gz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
