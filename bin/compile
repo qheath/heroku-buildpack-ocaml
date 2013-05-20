@@ -4,7 +4,8 @@
 set -e
 set -o pipefail
 
-url=http://codefirst.org/mzp/ocaml-4.00.tgz
+url=http://codefirst.org/mzp/ocaml4.00.1_opam1.00.tgz
+lib=http://codefirst.org/mzp/libs.tgz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -19,12 +20,16 @@ function indent() {
 
 cd $BUILD_DIR
 
+echo "-----> Fetching OCaml binaries"
 dir=/tmp/ocaml
 rm -fr $dir
 mkdir -p $dir
-
-echo "-----> Fetching OCaml binaries"
 curl  $url -s -o - | tar xzf - -C $dir
+
+echo "-----> Fetching OCaml libraries"
+rm -fr /tmp/opam
+mkdir -p /tmp/opam
+curl $libs -s -o - | tar xzf - -C /tmp/opam
 
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="$dir/bin:$PATH"
