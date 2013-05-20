@@ -19,12 +19,6 @@ function indent() {
 
 cd $BUILD_DIR
 
-# configure
-if [ -f configure ]; then
-  echo "-----> Configuring"
-  ./configure 2>&1 | indent
-fi
-
 dir=$(mktemp -t ocaml-XXXX)
 rm -fr $dir
 mkdir -p $dir
@@ -34,6 +28,12 @@ curl  $url -s -o - | tar xzf - -C $dir
 
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="$dir/bin:$PATH"
+
+# configure
+if [ -f configure ]; then
+  echo "-----> Configuring"
+  ./configure 2>&1 | indent
+fi
 
 # make
 echo "-----> Compiling with Make"
