@@ -19,7 +19,7 @@ function indent() {
 
 cd $BUILD_DIR
 
-dir=$(mktemp -t ocaml-XXXX)
+dir=/tmp/ocaml
 rm -fr $dir
 mkdir -p $dir
 
