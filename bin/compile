@@ -48,10 +48,13 @@ source /tmp/opam-lib/opam-init/init.sh
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
-  ./configure 2>&1 | indent
+
+  mkdir -p $BUILD_DIR/target
+  ./configure --prefix=$BUILD_DIR/target 2>&1 | indent
 fi
 
 # make
 echo "-----> Compiling with Make"
 
 make 2>&1 | indent
+make install 2>&1 | indent
