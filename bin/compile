@@ -29,7 +29,7 @@ curl  $url -s -o - | tar xzf - -C $dir
 echo "-----> Fetching OCaml libraries"
 rm -fr /tmp/opam
 mkdir -p /tmp/opam
-curl $libs -s -o - | tar xzf - -C /tmp/opam
+curl $lib -s -o - | tar xzf - -C /tmp/opam
 
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="$dir/bin:$PATH"
