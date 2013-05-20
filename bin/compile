@@ -34,6 +34,9 @@ curl $lib -s -o - | tar xzf - -C /tmp/opam
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="$dir/bin:$PATH"
 
+echo "-----> Setup Opam"
+source /tmp/opam/opam-init/init.sh
+
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
