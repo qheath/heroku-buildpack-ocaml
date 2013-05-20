@@ -4,8 +4,9 @@
 set -e
 set -o pipefail
 
-url=http://codefirst.org/mzp/ocaml4.00.1_opam1.00.tgz
-lib=http://codefirst.org/mzp/libs.tgz
+ocaml_url=http://codefirst.org/mzp/ocaml-4.00.tgz
+opam_url=http://codefirst.org/mzp/opam-full-1.0.tgz
+opam_lib_url=http://codefirst.org/mzp/opam-lib.tgz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
