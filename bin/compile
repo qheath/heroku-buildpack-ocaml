@@ -49,20 +49,11 @@ setup /tmp/opam-lib  $opam_lib_url #/tmp/opam-lib
 
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="/app/vendor/pcre/bin:/app/vendor/gdbm/bin:/tmp/ocaml/bin:/tmp/opam/bin:$PATH"
+export LD_PRELOAD=/app/vendor/pcre/lib/libpcre.so.1
 
 echo "-----> Load OPAM"
 source /tmp/opam-lib/opam-init/init.sh
 
-# configure
-if [ -f configure ]; then
-  echo "-----> Configuring"
-
-  mkdir -p $BUILD_DIR/target
-  ./configure --prefix=$BUILD_DIR/target 2>&1 | indent
-fi
-
 # make
 echo "-----> Compiling with Make"
-
-make 2>&1 | indent
-make install 2>&1 | indent
+make all 2>&1 | indent
