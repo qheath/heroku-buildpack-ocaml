@@ -8,7 +8,7 @@ pcre_url=https://s3-eu-west-1.amazonaws.com/midgard-heroku/pcre.tar.gz
 gdbm_url=http://codefirst.org/mzp/gdbm-1.tgz
 ocaml_url=http://codefirst.org/mzp/ocaml-4.00.tgz
 opam_url=http://codefirst.org/mzp/opam-full-1.0.tgz
-opam_lib_url=http://codefirst.org/mzp/opam-lib.tgz
+opam_lib_url=http://49.212.130.159/opam-lib.tgz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -45,7 +45,7 @@ echo "-----> Fetching OCaml libraries"
 setup /tmp/opam  $opam_url #/tmp/opam
 
 echo "-----> Fetching OPAM libraries"
-setup /tmp/opam-lib  $opam_lib_url #/tmp/opam-lib
+setup / $opam_lib_url #/
 
 echo "-----> Prepending $dir/bin to PATH"
 export PATH="/app/vendor/pcre/bin:/app/vendor/gdbm/bin:/tmp/ocaml/bin:/tmp/opam/bin:$PATH"
