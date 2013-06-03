@@ -8,7 +8,7 @@ pcre_url=https://s3-eu-west-1.amazonaws.com/midgard-heroku/pcre.tar.gz
 gdbm_url=http://49.212.130.159/heroku/gdbm-1.tgz
 ocaml_url=http://49.212.130.159/heroku/ocaml-4.00.tgz
 opam_url=http://49.212.130.159/heroku/opam-full-1.0.tgz
-opam_lib_url=http://49.212.130.159/heroku/eliom.tgz
+opam_lib_url=http://49.212.130.159/heroku/my-opam-lib.tgz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -54,7 +54,7 @@ export OCAML_TOPLEVEL_PATH=/app/vendor/opam-lib/system/lib/toplevel
 export PATH=/app/vendor/opam-lib/system/bin:$PATH
 
 echo "-----> Fetching OPAM libraries"
-setup /app/vendor/opam-lib $opam_lib_url
+setup / $opam_lib_url
 
 # make
 echo "-----> Compiling with Make"
