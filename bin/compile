@@ -27,7 +27,7 @@ function setup() {
 
   mkdir -p $dir
   echo "fetching $url to $dir"
-  curl  $url -s -o - | tar xzvf - -C $dir
+  curl  $url -s -o - | tar zxf - -C $dir
 }
 
 cd $BUILD_DIR
