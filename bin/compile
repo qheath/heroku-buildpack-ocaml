@@ -36,10 +36,12 @@ echo "-----> Fetching PCRE binaries"
 setup /app $pcre_url
 export PATH="/app/vendor/pcre/bin:$PATH"
 export LD_PRELOAD=/app/vendor/pcre/lib/libpcre.so.1
+export LD_LIBRARY_PATH=/app/vendor/pcre/lib:$LD_LIBRARY_PATH
 
 echo "-----> Fetching GDBM binaries"
 setup /app/vendor/gdbm $gdbm_url
 export PATH="/app/vendor/gdbm/bin:$PATH"
+export LD_LIBRARY_PATH=/app/vendor/gdbm/lib:$LD_LIBRARY_PATH
 
 echo "-----> Fetching OCaml binaries"
 setup /app/vendor/ocaml $ocaml_url
