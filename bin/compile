@@ -59,4 +59,4 @@ setup / $opam_lib_url
 
 # make
 echo "-----> Compiling with setup.sh"
-setup.sh 2>&1 | indent
+./setup.sh 2>&1 | indent
