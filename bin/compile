@@ -7,8 +7,8 @@ set -o pipefail
 pcre_url=https://s3-eu-west-1.amazonaws.com/midgard-heroku/pcre.tar.gz
 gdbm_url=http://49.212.130.159:5963/heroku/gdbm-1.tgz
 ocaml_url=http://49.212.130.159:5963/heroku/ocaml-4.00.tgz
-opam_url=http://49.212.130.159:5963/heroku/opam-full-1.0.tgz
-opam_lib_url=http://49.212.130.159:5963/heroku/my-opam-lib.tgz
+# opam_url=http://49.212.130.159:5963/heroku/opam-full-1.0.tgz
+# opam_lib_url=http://49.212.130.159:5963/heroku/my-opam-lib.tgz
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -46,16 +46,17 @@ echo "-----> Fetching OCaml binaries"
 setup /app/vendor/ocaml $ocaml_url
 export PATH="/app/vendor/ocaml/bin:$PATH"
 
-echo "-----> Fetching OCaml libraries"
-setup /app/vendor/opam  $opam_url
+# echo "-----> Fetching OCaml libraries"
+# setup /app/vendor/opam  $opam_url
+
 export PATH="/app/vendor/opam/bin:$PATH"
 export CAML_LD_LIBRARY_PATH=/app/vendor/opam-lib/system/lib/stublibs:/app/vendor/ocaml/lib/ocaml/stublibs
 export OPAMROOT=/app/vendor/opam-lib
 export OCAML_TOPLEVEL_PATH=/app/vendor/opam-lib/system/lib/toplevel
 export PATH=/app/vendor/opam-lib/system/bin:$PATH
 
-echo "-----> Fetching OPAM libraries"
-setup / $opam_lib_url
+# echo "-----> Fetching OPAM libraries"
+# setup / $opam_lib_url
 
 # make
 echo "-----> Compiling with Make"
