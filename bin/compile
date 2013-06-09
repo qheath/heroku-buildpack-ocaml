@@ -10,7 +10,7 @@ ocaml_url=http://49.212.130.159:5963/heroku/ocaml-4.00.tgz
 opam_url=http://49.212.130.159:5963/heroku/opam-full-1.0.tgz
 opam_lib_url=http://49.212.130.159:5963/heroku/my-opam-lib.tgz
 
-BUILD_DIR=$1
+export BUILD_DIR=$1
 CACHE_DIR=$2
 
 function indent() {
