@@ -58,5 +58,5 @@ echo "-----> Fetching OPAM libraries"
 setup / $opam_lib_url
 
 # make
-echo "-----> Compiling with Make"
-make all 2>&1 | indent
+echo "-----> Compiling with setup.sh"
+setup.sh 2>&1 | indent
