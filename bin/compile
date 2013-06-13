@@ -7,7 +7,7 @@ set -o pipefail
 # pcre_url=https://s3-eu-west-1.amazonaws.com/midgard-heroku/pcre.tar.gz
 # gdbm_url=http://49.212.130.159:5963/heroku/gdbm-1.tgz
 ocaml_url=http://49.212.130.159:5963/heroku/ocaml-4.00.tgz
-opam_url=http://49.212.130.159:5963/heroku/opam-full-1.0.tgz
+opam_url=http://49.212.130.159:5963/heroku/opam.tgz
 # opam_lib_url=http://49.212.130.159:5963/heroku/my-opam-lib.tgz
 
 BUILD_DIR=$1
